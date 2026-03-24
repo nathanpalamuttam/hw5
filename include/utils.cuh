@@ -36,23 +36,11 @@ struct AbsOp
   }
 };
 
-// d_in and d_out are device pointers of size num_items
-void abs_transform(float* d_in, float* d_out, int num_items) 
+void abs_transform(float* d_in, size_t num_items) 
 {
   AbsOp abs_op;
-
-  // Determine temporary storage requirements
-  void* d_temp = nullptr;
-  size_t temp_bytes = 0;
-  cub::DeviceTransform::Transform(d_in, d_out, num_items, abs_op);
-
-  // Allocate temporary storage
-  cudaMalloc(&d_temp, temp_bytes);
-
-  // Run the transform
-  cub::DeviceTransform::Transform(d_in, d_out, num_items, abs_op);
-
-  cudaFree(d_temp);
+  cub::DeviceTransform::Transform(d_in, d_in, num_items, abs_op);
+  std::cout<<num_items<<std::endl;
 }
 
 } //utils

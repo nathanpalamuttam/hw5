@@ -7,7 +7,8 @@
 namespace spmm {
 
 __global__ void SpMM(const size_t m, const size_t n, const size_t k,
-                     csr_t A, __constant__ float * d_X, float * d_Y)
+                     float * d_A_vals, uint32_t * d_A_colinds, uint32_t * d_A_rowptrs,
+                     __constant__ float * d_X, float * d_Y)
 {
     /**** IMPLEMENT THIS KERNEL ****/
 	//TODO
@@ -25,7 +26,8 @@ void SpMM_wrapper(csr_t& A, float * d_X, float * d_Y, const size_t k)
 
     // Call the kernel
     SpMM<<<blocks, threads_per_block>>>(A.get_rows(), A.get_cols(), k,
-                                        A, d_X, d_Y);
+                                        A.get_vals(), A.get_colinds(), A.get_rowptrs(), 
+                                        d_X, d_Y);
 
     // Sync w/ the host
     CUDA_CHECK(cudaDeviceSynchronize());

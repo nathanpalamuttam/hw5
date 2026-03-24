@@ -64,16 +64,19 @@ public:
 
     void abs()
     {
-        utils::abs_transform(d_vals, d_vals, nnz);
+        CUDA_CHECK(cudaDeviceSynchronize());
+        utils::abs_transform(d_vals, nnz);
+        CUDA_CHECK(cudaDeviceSynchronize());
     }
 
 
-    ~CSR()
+    void destroy()
     {
         CUDA_FREE_SAFE(d_vals);
         CUDA_FREE_SAFE(d_colinds);
         CUDA_FREE_SAFE(d_rowptrs);
     }
+
 
     inline size_t get_rows() const { return m; }
     inline size_t get_cols() const { return n; }
@@ -120,6 +123,11 @@ private:
             iss>>this->m>>this->n>>this->nnz;
             break;
         }
+
+
+        std::cout << "ROWS: " << this->m << std::endl 
+                  << "COLS: " << this->n << std::endl 
+                  << "NNZ: " << this->nnz << std::endl; 
 
 
         std::vector<COOTuple> tuples;

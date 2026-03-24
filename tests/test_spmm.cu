@@ -233,6 +233,8 @@ int main(int argc, char ** argv)
     CUDA_CHECK(cudaFree(d_X));
     CUDA_CHECK(cudaFree(d_Y));
 
+    csr_A.destroy();
+
     CUSPARSE_CHECK(cusparseDestroy(cusparseHandle));
 
 
