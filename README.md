@@ -109,7 +109,7 @@ For more information on CSR, see [Wikipedia](https://en.wikipedia.org/wiki/Spars
 In this repo, `include/CSR.hpp` defines a class that can be used to store a sparse matrix using the CSR storage format. 
 
 ### Parallelization Strategy ###
-In this assignment, the dense matrices are all stored in **row-major order**. 
+In this assignment, the dense matrices are all stored in **row-major order.** 
 This is different from HW1, where they were stored in column-major order. 
 Since $A$ is stored in CSR and $X$ is stored in row-major order, a good way to implement your SpMM kernel is using a row-by-row approach, where the output $Y$ is computed a row at a time. 
 This requires iterating through the nonzero elements in each row of $A$, then for each one, you multiply it with a single row of $X$, accumulating the result into a partial sum of a row of $Y$.
@@ -125,6 +125,8 @@ Furthermore, another challenge concerns how to effectively merge partial results
 A naive approach would be to accumulate each row of $Y$ in global memory using atomic additions. 
 This will produce correct results, but there are significantly better approaches that involve the use of shared memory. 
 Furthermore, one can make use of the Block-wide and Warp-wide functions in the [CUDA Unbound (CUB)](https://docs.nvidia.com/cuda/cub/index.html) library to implement effective merging of partial results of each row. 
+
+**We'll note that there are other ways you can parallelize a CSR + row-major SpMM kernel. The row-by-row approach is only one such strategy.**
 
 A final, rather exotic optimization you might try is reordering the rows/columns of each matrix to try to improve data locality/load balancing. 
 Generally, if you can permute the matrix so it has something that looks like a block-diagonal or banded sparsity pattern, your performance might improve. 
