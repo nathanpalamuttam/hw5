@@ -63,6 +63,18 @@ Second, it runs a simple benchmark that compares the throughput in terms of GFLO
 
 ## Running Benchmarks ## 
 
+### Perlmutter GPU Nodes ###
+Your kernel will be run on the GPU nodes of Perlmutter.
+Each GPU node of Perlmutter has 4 NVIDIA A100 GPUs, although for this assignment we'll only be using a single GPU.
+To access a GPU node of Perlmutter, add `-C gpu` to your salloc command/sbatch script.
+To run code on a single gpu, add `-G 1` to your srun command.
+
+It should be noted that Perlmutter has GPU nodes with 40 GB A100s and 80 GB A100s.
+For this assignment, we will be running on the 40 GB nodes.
+`run.sh` already ensures that this happens through the use of the `-C "gpu&hbm40g"` flag.
+
+### Matrices ###
+
 Your kernel will be evaluated on three large test matrices from the [SuiteSparse Matrix Collection](https://sparse.tamu.edu/).
 Each test matrix has at least 10s of millions of nonzeros, and each one has a different sparsity structure. 
 The three test matrices are:
@@ -189,5 +201,4 @@ These are some optional references you can look at for inspiration/more informat
 * [cuSPARSE SpMM API](https://docs.nvidia.com/cuda/cusparse/#cusparsespmm)
 
 * [Yang, Carl, Aydın Buluç, and John D. Owens. "Design principles for sparse matrix multiplication on the gpu." European Conference on Parallel Processing. Cham: Springer International Publishing, 2018.](https://arxiv.org/pdf/1803.08601)
-
 
