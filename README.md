@@ -44,9 +44,11 @@ run.sh             # SLURM batch script that runs the test_spmm benchmark on all
 ## Build Instructions ##
 To build the driver program, run the following
 
+`module load cudatoolkit/13.0`
+
 `mkdir build && cd build`
 
-`cmake ..`
+`cmake -DCMAKE_CXX_COMPILER=CC ..`
 
 `make test_spmm`
 
