@@ -72,6 +72,7 @@ To run code on a single gpu, add `-G 1` to your srun command.
 It should be noted that Perlmutter has GPU nodes with 40 GB A100s and 80 GB A100s.
 For this assignment, we will be running on the 40 GB nodes.
 `run.sh` already ensures that this happens through the use of the `-C "gpu&hbm40g"` flag.
+Finally, you can check how many GPU node hours you've used via `iris user <username>`.
 
 ### Matrices ###
 
@@ -108,6 +109,7 @@ To pass the checkpoint, your code must produce correct results for all test matr
 ### Performance
 
 Your GFLOPS/s will be computed on all three matrices for $k=64, 256$ and averaged. That will represent your final performance metric. If you get an average of **at least 350 GFLOPS/s**, you'll get at least a B+ on the performance part of your grade. Beyond that you'll be graded on a curve based on performance relative to the other students in the class. 
+All tests will be run on a single 40GB A100 GPU on Perlmutter.
 
 ### Leaderboard
 
