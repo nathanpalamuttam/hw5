@@ -88,7 +88,7 @@ Your grade out of 100 points will be based on the following things:
 - 10/100: Leaderboard Submission
 - 20/100: Writeup
 
-### Checkpoint: Due on April 9th, 11:59 PM EST ### 
+### Checkpoint: Due on April 10th, 11:59 PM EST ### 
 
 To pass the checkpoint, your code must produce correct results for all test matrices.
 `test_spmm.cu` will automatically run a correctness check against the SpMM function in the cuSPARSE library, so you don't have to set up correctness tests.
