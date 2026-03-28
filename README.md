@@ -73,6 +73,7 @@ It should be noted that Perlmutter has GPU nodes with 40 GB A100s and 80 GB A100
 For this assignment, we will be running on the 40 GB nodes.
 `run.sh` already ensures that this happens through the use of the `-C "gpu&hbm40g"` flag.
 Finally, you can check how many GPU node hours you've used via `iris user <username>`.
+Everyone has 35 GPU hours assigned to them right now. 
 
 ### Matrices ###
 
