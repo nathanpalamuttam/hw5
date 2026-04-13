@@ -4,6 +4,7 @@
 #SBATCH -C "gpu&hbm40g"
 #SBATCH -N 1
 #SBATCH -q regular
+#SBATCH -o leaderboard.out
 
 # --- Anonymous name generation ---
 NAMEFILE="$HOME/.cs5220-leaderboard-name"
