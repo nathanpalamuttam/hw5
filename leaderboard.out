@@ -1,0 +1,122 @@
+===== CS5220 HW5 LEADERBOARD SUBMISSION =====
+LEADERBOARD_NAME: yellow-penguin-23
+TIMESTAMP: 2026-04-22T04:23:20
+
+
+=====================
+[34m===== Running SpMM (matrices/nlpkkt120/nlpkkt120.mtx, k = 64) =====[0m
+[34mReading in matrices/nlpkkt120/nlpkkt120.mtx[0m
+Matrix is symmetric
+ROWS: 3542400
+COLS: 3542400
+NNZ: 96845792
+[34mDone![0m
+[34mRunning correctness check[0m
+[32mCorrectness for SpMM passed![0m
+[34mRunning cusparse benchmark[0m
+[91m[SpMM_cusparse]: 1.28609s[0m
+[92m[SpMM_cusparse]: 963 gflops/s[0m
+[34mRunning student benchmark[0m
+[91m[SpMM_student]: 0.501273s[0m
+[92m[SpMM_student]: 2472 gflops/s[0m
+=====================
+
+
+=====================
+[34m===== Running SpMM (matrices/nlpkkt120/nlpkkt120.mtx, k = 256) =====[0m
+[34mReading in matrices/nlpkkt120/nlpkkt120.mtx[0m
+Matrix is symmetric
+ROWS: 3542400
+COLS: 3542400
+NNZ: 96845792
+[34mDone![0m
+[34mRunning correctness check[0m
+[32mCorrectness for SpMM passed![0m
+[34mRunning cusparse benchmark[0m
+[91m[SpMM_cusparse]: 3.01141s[0m
+[92m[SpMM_cusparse]: 1646 gflops/s[0m
+[34mRunning student benchmark[0m
+[91m[SpMM_student]: 1.53234s[0m
+[92m[SpMM_student]: 3235 gflops/s[0m
+=====================
+
+
+=====================
+[34m===== Running SpMM (matrices/delaunay_n24/delaunay_n24.mtx, k = 64) =====[0m
+[34mReading in matrices/delaunay_n24/delaunay_n24.mtx[0m
+Matrix is symmetric
+Matrix is pattern
+ROWS: 16777216
+COLS: 16777216
+NNZ: 100663202
+[34mDone![0m
+[34mRunning correctness check[0m
+[32mCorrectness for SpMM passed![0m
+[34mRunning cusparse benchmark[0m
+[91m[SpMM_cusparse]: 1.8771s[0m
+[92m[SpMM_cusparse]: 686 gflops/s[0m
+[34mRunning student benchmark[0m
+[91m[SpMM_student]: 1.27048s[0m
+[92m[SpMM_student]: 1014 gflops/s[0m
+=====================
+
+
+=====================
+[34m===== Running SpMM (matrices/delaunay_n24/delaunay_n24.mtx, k = 256) =====[0m
+[34mReading in matrices/delaunay_n24/delaunay_n24.mtx[0m
+Matrix is symmetric
+Matrix is pattern
+ROWS: 16777216
+COLS: 16777216
+NNZ: 100663202
+[34mDone![0m
+[34mRunning correctness check[0m
+[32mCorrectness for SpMM passed![0m
+[34mRunning cusparse benchmark[0m
+[91m[SpMM_cusparse]: 6.00636s[0m
+[92m[SpMM_cusparse]: 858 gflops/s[0m
+[34mRunning student benchmark[0m
+[91m[SpMM_student]: 4.0404s[0m
+[92m[SpMM_student]: 1275 gflops/s[0m
+=====================
+
+
+=====================
+[34m===== Running SpMM (matrices/Cube_Coup_dt0/Cube_Coup_dt0.mtx, k = 64) =====[0m
+[34mReading in matrices/Cube_Coup_dt0/Cube_Coup_dt0.mtx[0m
+Matrix is symmetric
+ROWS: 2164760
+COLS: 2164760
+NNZ: 127206144
+[34mDone![0m
+[34mRunning correctness check[0m
+[32mCorrectness for SpMM passed![0m
+[34mRunning cusparse benchmark[0m
+[91m[SpMM_cusparse]: 1.52842s[0m
+[92m[SpMM_cusparse]: 1065 gflops/s[0m
+[34mRunning student benchmark[0m
+[91m[SpMM_student]: 0.452746s[0m
+[92m[SpMM_student]: 3596 gflops/s[0m
+=====================
+
+
+=====================
+[34m===== Running SpMM (matrices/Cube_Coup_dt0/Cube_Coup_dt0.mtx, k = 256) =====[0m
+[34mReading in matrices/Cube_Coup_dt0/Cube_Coup_dt0.mtx[0m
+Matrix is symmetric
+ROWS: 2164760
+COLS: 2164760
+NNZ: 127206144
+[34mDone![0m
+[34mRunning correctness check[0m
+[32mCorrectness for SpMM passed![0m
+[34mRunning cusparse benchmark[0m
+[91m[SpMM_cusparse]: 3.73255s[0m
+[92m[SpMM_cusparse]: 1744 gflops/s[0m
+[34mRunning student benchmark[0m
+[91m[SpMM_student]: 1.33064s[0m
+[92m[SpMM_student]: 4894 gflops/s[0m
+=====================
+
+
+===== END CS5220 HW5 LEADERBOARD SUBMISSION =====
